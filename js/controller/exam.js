@@ -1,54 +1,52 @@
- var app = angular.module('quizApp');
- app.controller('quizCtrl',function($http,$scope,$interval, quizFactory)
- {                      
-     $scope.getQuestion=function(){
-      	var quiz =   quizFactory.getQuestion().then(function(resp){
-
-
-      		
-					 $scope.question = resp;
-        	console.log("$scope.question", $scope.question)
+var app = angular.module('quizApp',[]);
+ app.controller('quizCtrl',function($http,$scope,$interval, quizFactory){    
+      $scope.quiz = {};  
+       $scope.results = [];           
+      $scope.getQuestion=function(){
+      quizFactory.getQuestionFactory().then(function(data){
+           $scope.questions = data;
+		   console.log("$scope.question", $scope.questions)
         });
         
     }
     $scope.getQuestion();
+     
 
+ //var answer = JSON.stringify
 
-
-$scope.answers ={};
+  $scope.answer ={};
+  var answer = JSON.stringify
+  
   $scope.correctCount = 0;
+  
   $scope.showResult = function(){
-	    $scope.correctCount = 0;
-		    var qLength = $scope.question.length;
-		    
-		     for(var i=0;i<qLength;i++){
-			      var answers = $scope.question[i].answers;
-			    
-			      $scope.question[i].userAnswerCorrect = false;
-			      $scope.question[i].userAnswer = $scope.answers[i];
-			     
-			      for(var j=0;j<answers.length;j++){
-				        answers[j].selected = "donno";
-				     
-				        if ($scope.question[i].userAnswer === answers[j].answer && answers[j].correct===true){
-				       
-				          $scope.question[i].userAnswerCorrect = true;
-				         
-				          answers[j].selected = "true";
-				         
-				          $scope.correctCount++;
-		        
-
-		        }else if($scope.question[i].userAnswer === answers[j].answer&& answers[j].correct===false){
-		         
-		          answers[j].selected = "false";
-	        }
-      }
-  }
-}
-    
    
-
+    $scope.correctCount = 0;
+   
+     var questionLength = $scope.questions.length;
+    for(var i=0;i<questionLength;i++){
+      var answer = $scope.questions[i].answer;
+     
+      $scope.questions[i].userAnswerCorrect = false;
+     
+      $scope.questions[i].userAnswer = $scope.answer[i];
+      
+      for(var j=0;j<answer.length;j++){
+        answer[j].selected = "donno";
+        
+        if ($scope.questions[i].userAnswer === answer[j].answerText && answer[j].correct===true){
+          $scope.questions[i].userAnswerCorrect = true;
+          answer[j].selected = "true";
+          $scope.correctCount++;
+        
+        }
+      }
+    
+    
+    console.log($scope.answer);
+    
+  };
+};
 
    
 
@@ -64,7 +62,7 @@ $scope.answers ={};
 	{
 	   $interval(decreamentCountdown,1000,$scope.countdown)
 	};
-	  $scope.countdown=10;
+	  $scope.countdown=120;
 	  startCountDown();
 
 

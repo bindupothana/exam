@@ -1,4 +1,4 @@
- var app =angular.module('quizApp', ['ui.router']);
+ var app =angular.module('quizApp', ['ngroute']);
  app.config(function($stateProvider,$urlRouterProvider){
  $stateProvider
  .state('start', {

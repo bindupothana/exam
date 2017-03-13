@@ -1,0 +1,42 @@
+[{
+    "question": "1. Is AngularJs is a Open source?",
+     "options":["True","False"],
+      "answer":0
+
+    },
+    {
+        "question":"2. who was known as Iron man of India?",
+        "options":["Govind Ballabh Pant","Jawaharlal Nehru","Subhash Chandra Bose","Sardar Vallabhbhai Patel"],
+        "answer":3
+
+    },
+    {
+        "question":"3. what is today?",
+        "options":["thursday","friday","sunday","monday"],
+        "answer":1
+    },
+    {
+        "question":"4. Which of the following is used in pencils?",
+        "options":["Graphite","Silicon","Charcoal","Phosphorous"],
+        "answer":0
+
+    },
+    {
+        "question":"5. Which county did Ravi Shastri play for?",
+        "options":["Glamorgan","Leicestershire","Gloucestershire","Lancashire"],
+        "answer":0
+    },
+    {
+        "question":"6. Which was the 1st non Test playing country to beat India in an international match?",
+        "options":["Canada","Zimbabwe","Sri Lanka","East Africa"],
+        "answer":2
+
+    },
+    {
+        "question":"7. Which batsman started his international cricketing career at the age of 16?",
+        "options":["Suresh Raina","Piyush Chawla","Rahul Dravid","Sachin Tendulkar"],
+        "answer":3
+
+    }
+
+ ]   

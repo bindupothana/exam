@@ -6,106 +6,45 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.9/angular-filter.js"></script>
-<script src="js/app.js"> </script>
-<script src="js/controller/exam.js"> </script>
+  <script src="js/controller/exam.js"> </script>
+  <script src="js/service/data.js"> </script>
+  <script src="js/factory/exam.js"> </script>
 
-<script src="js/service/data.js"> </script>
-<script src="js/service/exam.js"> </script>
-
-</head>
+  </head>
 <body ng-controller="quizCtrl">
 
 <hr>
 <button  type="button" class="btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#myModal" >{{countdown}}{{message}}</button>
 
 
-<div ng-repeat="(question, options) in questions">
-     <h4 class="panel-title"  >
-     <span {{ question }} >{{question}}</span> 
-     <ul id="question">
-			<div class="quiz-area" ng-show="inProgress">
-	
-		<h2 id="question">{{question}}</h2>
-		
+  <div ng-repeat="question in questions"  >
+  <style>div{ margin-left: 80px;}
 
+</style>{{question.question}}
+           
+        <ul>
+        
+        <div ng-repeat="option in question.options">
+         <label>
+          <md-radio-group ng-model="data.options">
 
-
-		<ul id="options">
-			<li ng-repeat="option in options">
-				<label>
-					<input type="radio" name="answer" value="{{option}}">
-					{{option}}
-				</label>
-			</li>
-		</ul>
-     </h4>
- </div>
- <!--<ul class="unstyled">
-      <li ng-repeat="question in question">
-       <strong class="question">{{ question.question}}</strong>
-       <ul class="unstyled" id="quest_{{$parent.$index}}"">
-        <li ng-repeat="answer in question.answers">
-          <label class="isCorrect_{{answer.selected}}" for="quest_{{$parent.$index}}_answer_{{$index}}">
-            <input type="radio" id="quest_{{$parent.$index}}_answer_{{$index}}" 
-            ng-model="answers[$parent.$index]" value="{{ answer.answer }}"  name="quest_{{$parent.$index}}_answers" />{{ answer.answer}}</label>
-        </li>
-       </ul>
+          <input type="radio"  value="{{options}}"/>
+          {{option}}
+        </label>
+        </div>
       </li>
     </ul>
-    <button class="btn" type="submit" ng:click="showResult()">Submit</button>
-  <div class="well">
-    <p>you got {{ correctCount }} out of {{questions.length}} right</p>-->
-
-    
-  </div>
-    
-
-
-
+    </md-radio-group >
+    </div>
+    </div>
+    </div>
+      
+    <button class="btn btn-info btn-lg pull-right" type="submit" ng:click="showResult()">Submit</button>
+<div class="well">
+    <p>you got {{ correctCount }} out of {{questions.length}} right</p>
 
 
 
-
-
-
-
-
-
-
-             <!-- <div  "{{question}}">{{question}}</div>
-            </h4>
-          </div>
-          <div id="{{question}}" >
-            <div> 
-              <div ng-repeat="(key, value) in question">
-                
-                      <div "{{question}}{{$index}}">{{key}}{{index}}</div> 
-
-                    
-
-                  </div>
-                  <div id="{{question}}{{$index}}">
-                    
-                      <div ng-repeat="option in value">
-                      <ul>
-                          <li><div "{options}"> </div> {{option.options}}</li>
-                          
-                           
-                        </ul>
-                        
-                      </div>-->
-
-
-
-
-
-
-
-
-
-
- 
 </body>
 </html>
