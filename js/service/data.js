@@ -8,5 +8,18 @@ app.service('quizService',function($http){
 
     }
 
+ this.getAnswers= function()
+    {
+	    return $http.get('answer.json').success(function(response) {
+	       console.log(response.data);
+	     });
+
+    }
+
+
+
+
+
+
 });
 

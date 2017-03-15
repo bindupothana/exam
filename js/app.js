@@ -1,21 +1,17 @@
- var app =angular.module('quizApp', ['ngroute']);
+ 
+ 'use strict';
+
+
+ var app =angular.module('quizApp', ['ui.router']);
  app.config(function($stateProvider,$urlRouterProvider){
+
  $stateProvider
- .state('start', {
- 	url : '/start',
-  templateUrl : 'views/start.html',
-  controller : 'studentCtrl'
+ .state('score', {
+ 	url : '/score',
+  templateUrl : 'view/score.html',
+  controller : 'quizCtrl'
 
  });
- $urlRouterProvider.otherwise('/');
+ $urlRouterProvider.otherwise('/quiz');
 
  }) ;
-
-
-
-  
-
-
-
-
-

@@ -1,28 +1,35 @@
  var app = angular.module('quizApp');
 app.factory('quizFactory', function($q, quizService) {
 var factory={};
-var questionMapname = {};
-var answersMapname={};
+var question = {};
+var answer={};
  
-    function isExistKey(mapname, key){
-    return mapname[key];
-    }
-    factory.getQuestionFactory = function() {
-     var deferred = $q.defer();
-    quizService.getQuestion().then(
-    function(successInfo) {
    
-
-              deferred.resolve(successInfo.data);
-          },
-          function(errorInfo) {
-               deferred.reject([]);
+    factory.getQuestionFactory = function() {
+       var deferred = $q.defer();
+       quizService.getQuestion().then(function(resp) {  
+       deferred.resolve(resp.data);
+    },
+      function(errorInfo) {
+        deferred.reject([]);
           });
      return deferred.promise;
      }
 
-     return factory;
-     
-     
+
+     factory.getAnswersFactory = function(){
+       var deferred = $q.defer();
+        quizService.getAnswers().then(function(resp) {
+         deferred.resolve(resp.data);
+      },
+       function(errorInfo) {
+         deferred.reject([]);
+       });
+      return deferred.promise;
+    }
+
+    return factory;
+
+
 
   });
