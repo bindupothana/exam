@@ -8,13 +8,13 @@ app.service('quizService',function($http){
 
     }
 
- this.getAnswers= function()
+ this.getOptions= function()
     {
-	    return $http.get('answer.json').success(function(response) {
-	       console.log(response.data);
-	     });
+     return $http.get('answer.json').success(function(response) {
+	        console.log(response.data);
+	      });
 
-    }
+     }
 
 
 

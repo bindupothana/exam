@@ -20,30 +20,29 @@
   </head>
 <body ng-controller="quizCtrl">
 
-<hr>
 <h3>
 <div class="alert alert-info"> 
 Time Left:{{countdown}}{{message}} sec</div></h3>
 
 
   
-    <ol type="1">
-      <li ng-repeat="question in questions">
-       <strong class="question">{{ question.question }}</strong>
+   <ol type="1">
+ <div ng-repeat="(key, question) in questions">
+        <strong class="question">{{ question.question }}</strong>
        <ol type="1">
-        <li ng-repeat="answer in question.answers">
-         
-            <input type="radio" ng-model="isCorrect_[$index+1]" class="isCorrect_{{answers.selected}}"  name="question_{{$parent.$index}}_answer" /> <label  >{{  answer.answer }}</label>
+        <li ng-repeat="(inner_key, option) in question.options">
+                     <input type="radio" data-ng-model="ques_info[i].answer[index]"  ng-class= "ques_info[i].answer_{{answer.selected}}"  
+            name="ques_info[i]_{{$parent.$index}}_answer"  value="{{options}}" ng-click="m1(key, inner_key)"/> <label>{{option}}</label>
         </li>
        </ol>
-      </li>
+      </div>
     </ol>
 <div class="col-md-4 center-block"></div>  
 
      
 
 
-    <button class="btn btn-info btn-lg pull-center"  type="submit" ng:click="showResult()">Submit</button>
+    <button class="btn btn-info btn-lg pull-center"  type="submit" ng:click="getAnswers()">Submit</button>
   
          <div class="alert alert-success"> 
         </br><p>you got {{ correctCount }} out of {{questions.length}} right</p>
