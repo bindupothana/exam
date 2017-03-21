@@ -32,7 +32,7 @@ Time Left:{{countdown}}{{message}} sec</div></h3>
        <ol type="1">
         <li ng-repeat="(inner_key, option) in question.options">
                      <input type="radio" data-ng-model="ques_info[i].answer[index]"  ng-class= "ques_info[i].answer_{{answer.selected}}"  
-            name="ques_info[i]_{{$parent.$index}}_answer"  value="{{options}}" ng-click="m1(key, inner_key)"/> <label>{{option}}</label>
+            name="ques_info[i]_{{$parent.$index}}_answer"  value="{{options}}" ng-click="selectedAnswerForQues(key, inner_key)"/> <label>{{option}}</label>
         </li>
        </ol>
       </div>
@@ -42,7 +42,7 @@ Time Left:{{countdown}}{{message}} sec</div></h3>
      
 
 
-    <button class="btn btn-info btn-lg pull-center"  type="submit" ng:click="getAnswers()">Submit</button>
+    <button class="btn btn-info btn-lg pull-center"  type="submit" ng-click="getAnswers()">Submit</button>
   
          <div class="alert alert-success"> 
         </br><p>you got {{ correctCount }} out of {{questions.length}} right</p>

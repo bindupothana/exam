@@ -10,23 +10,23 @@ var answer={};
        quizService.getQuestion().then(function(resp) {  
        deferred.resolve(resp.data);
     },
-      function(errorInfo) {
-        deferred.reject([]);
-          });
+       function(errorInfo) {
+       deferred.reject([]);
+           });
      return deferred.promise;
-     }
+      }
 
 
-     factory.getAnswersFactory = function(){
-        var deferred = $q.defer();
-         quizService.getOptions().then(function(resp) {
-          deferred.resolve(resp.data);
-       },
-        function(errorInfo) {
-          deferred.reject([]);
-        });
-       return deferred.promise;
-     }
+     // factory.getAnswersFactory = function(){
+     //    var deferred = $q.defer();
+     //     quizService.getOptions().then(function(resp) {
+     //      deferred.resolve(resp.data);
+     //   },
+     //    function(errorInfo) {
+     //      deferred.reject([]);
+     //    });
+     //   return deferred.promise;
+     // }
 
     return factory;
 
