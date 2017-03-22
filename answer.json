@@ -10,33 +10,50 @@
         "answer":3
 
     },
+   
     {
-        "question":"3. what is today?",
-        "options":["thursday","friday","sunday","monday"],
-        "answer":1
-    },
-    {
-        "question":"4. Which of the following is used in pencils?",
+        "question":"3. Which of the following is used in pencils?",
         "options":["Graphite","Silicon","Charcoal","Phosphorous"],
         "answer":0
 
     },
     {
-        "question":"5. Which county did Ravi Shastri play for?",
+        "question":"4. Which county did Ravi Shastri play for?",
         "options":["Leicestershire","Gloucestershire","Lancashire","Glamorgan"],
         "answer":3
     },
     {
-        "question":"6. Which was the 1st non Test playing country to beat India in an international match?",
+        "question":"5. Which was the 1st non Test playing country to beat India in an international match?",
         "options":["Canada","Zimbabwe","Sri Lanka","East Africa"],
         "answer":2
 
     },
     {
-        "question":"7. Which batsman started his international cricketing career at the age of 16?",
+        "question":"6. Which batsman started his international cricketing career at the age of 16?",
         "options":["Suresh Raina","Piyush Chawla","Rahul Dravid","Sachin Tendulkar"],
         "answer":3
 
+    },
+    {
+        "question":"7.In which decade was the American Institute of Electrical Engineers (AIEE) founded?",
+        "options":["1850s","1880s","1930s","1950s"],
+        "answer":1
+
+    },
+    {
+        "question":"8.'Dandia' is a popular dance of",
+        "options":["Punjab","Gujarat","Tamil Nadu","Maharashtra"],
+        "answer":1
+    },
+    {
+        "question":"9.Who is the first Indian woman to win an Asian Games gold in 400m run?",
+        "options":["M.L.Valsamma","P.T.Usha","Kamaljit Sandhu","K.Malleshwari"],
+        "answer":2
+    },
+    {
+        "question":"10.What is 24x2?",
+        "options":["38","28","68","48"],
+        "answer":3
     }
 
  ]   

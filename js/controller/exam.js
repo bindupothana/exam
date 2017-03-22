@@ -42,17 +42,18 @@ var app =angular.module('quizApp');
       
              
   $scope.getAnswers=function(){
+     $scope.correctCount = 0;
      var correctCount = 0;
      var questionLength = $scope.questions.length;
     for(var i = 0; i< questionLength ; i++){
       var answer = $scope.questions[i].answer;
          console.log("ans", answer)
-      // var userSelectedAnswer = prompt( $scope.questions[i].answer);
+    
       for(var j=0; j < $scope.selectedAns.length; j++){
         var ques = $scope.selectedAns[j].question;
         var selectedAns = $scope.selectedAns[j].userSelectedAnswer;
         if(i === ques && answer===selectedAns){
-          correctCount ++;
+          $scope.correctCount ++;
         }
       }
 
@@ -73,7 +74,7 @@ var app =angular.module('quizApp');
      var startCountDown=function() {
        $interval(decreamentCountdown,1000,$scope.countdown)
       };
-       $scope.countdown=10;
+       $scope.countdown=90;
        startCountDown();
 
 
